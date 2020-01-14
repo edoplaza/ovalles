@@ -1,0 +1,138 @@
+.header {
+  &__logo {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 114;
+    img {
+      width: 70px;
+      height: auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    &--scroll {
+      top: 1.5rem;
+      transition: top 0.3s ease;
+      img {
+        width: 60px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  &__brand {
+    position: fixed;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    font-size: 3rem;
+    font-weight: $light;
+    z-index: 114;
+    text-transform: uppercase;
+    color: white;
+    span {
+      display: block;
+      font-size: 1.6rem;
+      letter-spacing: 1rem;
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+
+    }
+  }
+  &__pull {
+    position: fixed;
+    top: 3rem;
+    right: 2rem;
+    width: 25px;
+    height: 19px;
+    z-index: 114;
+    cursor: pointer;
+    transition: top 0.3s ease;
+    &--scroll {
+      top: 2rem;
+      transition: top 0.3s ease;
+    }
+    .pull1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0) rotate(0);
+      transition: transform 0.3s ease;
+    }
+    .pull2 {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease;
+    }
+    .pull3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(0, 0) rotate(0);
+      transition: transform 0.3s ease;
+    }
+
+    &.closed {
+      .pull1 {
+        transform: translate(7px, -5px) rotate(45deg);
+        transition: transform 0.3s ease;
+      }
+      .pull2 {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+      .pull3 {
+        transform: translate(-13px, 7px) rotate(-45deg);
+        transition: transform 0.3s ease;
+      }
+    }
+    &-wrapper {
+      position: relative;
+    }
+  }
+}
+
+@include tablet {
+  .header {
+     &__logo {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      img {
+        width: 50px;
+      }
+    }
+    &__brand {
+      top: 2rem;
+      font-size: 2.5rem;
+    }
+    &__pull {
+      top: 2rem;
+      right: 1.5rem;
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    &__brand {
+      display: none;
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+

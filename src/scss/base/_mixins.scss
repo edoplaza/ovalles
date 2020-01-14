@@ -1,0 +1,94 @@
+@mixin hd {
+  @media (min-width: #{$hd-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin center{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin centerImage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@mixin centerX{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin centerY{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin zoom($zoom, $speed){
+  transform: scale($zoom);
+  transform-origin:center;
+  transition: transform $speed;
+}
+
+@mixin animateBorder {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  left: 0;
+  right: auto;
+  background: white;
+  animation: borderAnimation 0.5s forwards;
+  width: 0;
+  @keyframes borderAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+@mixin animateBorderOut {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  left: auto;
+  right: 0;
+  background: white;
+  animation: borderAnimationOut 0.5s forwards;
+
+  @keyframes borderAnimationOut {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+}

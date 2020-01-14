@@ -1,0 +1,233 @@
+.contact {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  &__inner {
+    position: relative;
+    min-height: 100vh;
+  }
+  &__top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-end;
+    padding: 0;
+    &-intro {
+      width: 50%;
+      margin: 0 0 10rem 0;
+      p {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: black;
+        font-weight: $regular;
+        max-width: 400px;
+      }
+    }
+    &-tag {
+      width: 60%;
+      border-left: 1px solid $gray;
+      padding: 1rem 0 2rem 4rem;
+      h2 {
+        font-size: 5rem;
+        line-height: 6rem;
+        color: white;
+        font-weight: $regular;
+        margin: 0 0 2rem 0;
+      }
+      p {
+        font-size: 1.8rem;
+        line-height: 3rem;
+        color: white;
+        font-weight: $light;
+        max-width: 400px;
+        padding: 0 0 2rem 0;
+      }
+      a {
+        font-size: 1.8rem;
+        line-height: 3rem;
+        color: $red;
+        font-weight: $light;
+        max-width: 400px;
+        padding: 0 0 2rem 0;
+      }
+    }
+  }
+  &__main {
+    padding: 0 0 10rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  &__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 199;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    transition: all 0.8s ease;
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+      z-index: 200;
+      transition: all 1s ease;
+    }
+  }
+  &__output {
+    position: fixed;
+    width: 100%;
+    padding: 4rem 1rem;
+    background: $red;
+    font-size: 2rem;
+    color: white;
+    z-index: 140;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    transition: all 0.8s ease;
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+      z-index: 200;
+      transition: all 1s ease;
+    }
+  }
+  &__form {
+    width: 40%;
+  }
+  &__info {
+    width: 60%;
+    padding: 4rem 0 0 4rem;
+    &-item {
+      font-size: 1.8rem;
+      margin: 0 0 4rem 0;
+      font-weight: $regular;
+      color: black;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      i {
+        color: white;
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+  &__form {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+      padding: 2rem 0;
+      border: none;
+      border-bottom: 1px solid $gray;
+      border-radius: 0;
+      font-size: 1.8rem;
+      font-weight: $regular;
+      color: white;
+      background: black;
+      margin: 0 0 3rem 0;
+      -webkit-appearance: none;
+      &.error {
+        border: 1px solid red;
+      }
+      &:placeholder {
+        color: white;
+        opacity: 1;
+      }
+    }
+    ::placeholder {
+      color: white;
+      opacity: 1;
+    }
+  }
+  &__submit {
+    border: 1px solid white;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: $regular;
+    padding: 1rem 2rem;
+    background: black;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+@include desktop {
+  .contact {
+    &__top {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1200px;
+      align-items: flex-start;
+      padding: 2rem 0;
+      &-intro {
+        width: 100%;
+      }
+      &-tag {
+        width: 100%;
+        padding: 0 0 0 2rem;
+        h2 {
+          font-size: 3rem;
+          line-height: 4rem;
+        }
+      }
+    }
+
+    &__info {
+      width: 100%;
+      padding: 4rem 0 0 0;
+      &-item {
+        font-size: 1.8rem;
+        margin: 0 0 4rem 0;
+        font-weight: $regular;
+        color: black;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        i {
+          color: white;
+          margin: 0 1rem 0 0;
+        }
+      }
+    }
+    &__main {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+    }
+    &__form {
+      width: 100%;
+      margin: 0 0 3rem 0;
+      form {
+        input {
+          margin: 0 0 2rem 0;
+        }
+      }
+    }
+    &__submit {
+      align-self: flex-start;
+    }
+
+  }
+}
+

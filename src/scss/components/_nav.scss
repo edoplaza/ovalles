@@ -1,0 +1,168 @@
+.nav {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: -100vw;
+  background: black;
+  z-index: 113;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &__content {
+    padding: 0 15rem;
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__item {
+    color: white;
+    font-size: 5rem;
+    line-height: 5rem;
+    font-weight: $light;
+    margin: 0 0 3rem 0;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:after {
+      @include animateBorderOut;
+    }
+    &:hover {
+      &:after {
+        @include animateBorder;
+      }
+    }
+  }
+  &__contact {
+    position: absolute;
+    bottom: 6rem;
+    right: 10rem;
+  }
+}
+
+.nav-hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 30vw;
+  min-width: 500px;
+  max-width: 600px;
+}
+
+.nav-hero__cta {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-hero-img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  width: 1000px;
+  min-height: 1500px;
+  min-width: 1000px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.nav-hero-img img {
+  height: 100%;
+  display: block;
+}
+
+.nav-hero-img img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-hero:hover .nav-hero-img img:nth-child(2) {
+  opacity: 1;
+}
+
+.nav-hero-img img {
+  display: none;
+}
+
+@include desktop {
+  .nav {
+    // background: #f1f1f1;
+    &__content {
+      padding: 0 0 0 12vw;
+    }
+    &__item {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+    &__contact {
+      right: 5rem;
+    }
+  }
+
+  .nav-hero {
+    width: 25vw;
+    min-width: 400px;
+  }
+
+}
+
+@include tablet {
+  .nav {
+    &__items {
+      transform: translateY(-10%);
+    }
+
+    &__content {
+      padding: 0 0 0 2rem;
+    }
+    &__contact {
+      bottom: 3rem;
+      right: auto;
+      left: 2rem;
+    }
+    &__item {
+      margin: 0 0 2rem 0;
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+    }
+  }
+  .nav-hero {
+    width: 40vw;
+    min-width: auto;
+  }
+  .nav-hero__cta {
+    display: none;
+
+  }
+}
+
+@include mobile {
+  .nav {
+
+    &__contact {
+      bottom: 10rem;
+    }
+
+  }
+  .nav-hero {
+    display: none;
+  }
+
+}

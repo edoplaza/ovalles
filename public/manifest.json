@@ -1,0 +1,42 @@
+{
+  "name": "Alfredo Ovalles",
+  "short_name": "Alfredo Ovalles",
+  "start_url": ".",
+  "homepage": "https://alfredoovalles.com",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "ovalles72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "ovalles96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "ovalles128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "ovalles144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "ovalles152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "ovalles192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

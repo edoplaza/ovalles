@@ -1,0 +1,57 @@
+.arrows {
+  background: $gray-dark;
+  padding: 4rem 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 16rem);
+    margin: 0 auto;
+  }
+  &__arrow {
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg {
+      margin: 0 0 0 1rem;
+      fill: white;
+      width: 2rem;
+      transition: transform 0.3s ease;
+    }
+    &-left {
+      svg {
+        margin: 0 1rem 0 0;
+      }
+      &:hover {
+        svg {
+          transform: translateX(-7px) !important;
+          transition: transform 0.3s ease !important;
+        }
+      }
+    }
+    &:hover {
+      svg {
+        transform: translateX(7px);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .arrows {
+    &__inner {
+     width: calc( 100% - 4rem);
+
+    }
+    &__arrow {
+      span {
+        display: none;
+      }
+      svg {
+        width: 3rem;
+      }
+    }
+  }
+}

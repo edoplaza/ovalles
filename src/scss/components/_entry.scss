@@ -1,0 +1,301 @@
+.entry{
+  font-family: $lato;
+  p, p > em{
+    margin: 0 0 2rem 0;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: $regular;
+    color: darken(white, 10%);
+  }
+
+  a, em{
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: $regular;
+  }
+
+  strong {
+    font-weight: $bold;
+  }
+
+  a {
+    font-weight: $regular;
+    color: $red;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  b{
+    font-weight: $bold;
+  }
+
+  // img{
+  //   width: 100%;
+  //   height: auto;
+  //   margin: 1rem 0 0 0;
+  // }
+
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $bold;
+  }
+
+  h1{
+    font-size: 4rem;
+    line-height: 5rem;
+    margin: 0 0 2rem 0;
+  }
+
+  h2{
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin:0 0 1rem 0;
+  }
+  h3{
+    font-size: 2.2rem;
+    line-height: 3rem;
+    margin:0 0 1rem 0;
+  }
+
+  h4{
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+    margin:0 0 1rem 0;
+  }
+  h5{
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin:0 0 1rem 0;
+  }
+  h6{
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin:0;
+  }
+
+  ul{
+    list-style: none; /* Remove default bullets */
+    margin:0 0 3rem 0;
+    @include tablet{
+      margin:0 0 30px 10px;
+    }
+    li:before {
+      content: "\2022";
+      color: $red;
+      font-weight: $bold;
+      font-size: 3rem;
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  ol{
+   list-style: decimal inside none;
+    margin: 0;
+    margin:0 0 3rem 0;
+     @include tablet{
+      margin:0 0 30px 10px;
+    }
+  }
+  li {
+   font-size: 1.6rem;
+   line-height: 2.8rem;
+   color: black;
+   margin: 0 0 10px 0;
+   font-weight: $regular;
+   color: black;
+   padding: 0 0 0 2rem;
+   position: relative;
+  }
+
+  ol {
+    li {
+      padding: 0;
+    }
+  }
+
+ dd{
+   margin: 0 0 20px 0;
+ }
+ dt{
+   font-size: 2.6rem;
+   line-height: 3rem;
+   color: black;
+   font-weight: 400;
+   margin: 0 0 10px 0;
+ }
+ dd{
+   font-size: 1.6rem;
+   line-height: 3rem;
+   color: black;
+   margin: 0 0 30px 0;
+   font-weight: 300;
+ }
+
+ blockquote{
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin: 4rem 0 4rem 2rem;
+  padding: 0 20px;
+  border-left: 1px solid $gray;
+   p{
+     margin: 0 !important;
+   }
+ }
+
+ hr {
+    margin: 40px auto;
+    width: 100%;
+ }
+
+ iframe{
+  width: 100%;
+  height:50vw;
+  @include tablet{
+    height:300px;
+  }
+   @include hd{
+    height:450px;
+  }
+ }
+
+ table {
+    display: table;
+    margin: 40px 0;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color:black;
+ }
+
+ table.standard {
+  border-collapse: collapse;
+  position: relative;
+  z-index: 10;
+  background: white;
+  max-width: 66.66%;
+  td {
+    border: 1px solid #fff;
+
+  }
+ }
+
+
+
+ table.standard-big {
+  max-width: 100%;
+  min-width: 100%;
+ }
+
+ thead {
+   display: table-header-group;
+   vertical-align: middle;
+   border-color: inherit;
+   text-align: left;
+   color: black;
+   font-weight: 400;
+ }
+
+ tbody {
+   display: table-row-group;
+   vertical-align: middle;
+   border-color: inherit
+ }
+
+ tfoot {
+   display: table-footer-group;
+   vertical-align: middle;
+   border-color: inherit
+ }
+
+ table > tr {
+    vertical-align: middle;
+ }
+
+ col {
+    display: table-column
+ }
+
+ colgroup {
+    display: table-column-group
+ }
+
+ tr {
+   display: table-row;
+   vertical-align: inherit;
+   border-color: inherit
+ }
+
+ td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 15px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+ }
+
+ th {
+    font-weight: bold;
+ }
+
+ caption {
+    display: table-caption;
+    text-align: -webkit-center
+ }
+
+ img.alignright {
+   float: right;
+   margin:1rem 0 2rem 2rem;
+ }
+ img.alignleft {
+   float: left;
+   margin: 1rem 2rem 2rem 0;
+  }
+ img.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+  }
+ .alignright {
+   float: right;
+  }
+ .alignleft {
+   float: left;
+ }
+ .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@include tablet {
+  .entry{
+    table.standard {
+      max-width: 100%;
+    }
+  }
+}
+
+@include mobile {
+  .entry {
+    h1{
+      font-size: 5rem;
+      line-height: 4rem;
+      margin:0 0 3rem 0;
+    }
+
+    h2{
+      font-size: 3rem;
+      line-height: 4rem;
+      margin:0 0 2rem 0;
+    }
+
+    h3{
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      margin:0 0 2rem 0;
+      font-weight: $regular;
+    }
+  }
+}

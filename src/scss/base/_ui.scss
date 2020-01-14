@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+button:focus, input:focus {
+  outline: 0;
+
+}
+
+.blurred {
+  filter: blur(1px);
+}
+

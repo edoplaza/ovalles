@@ -1,0 +1,43 @@
+.logo {
+  &--red {
+    svg {
+      path.circle {
+        fill: $red;
+      }
+      path.word {
+        fill: $gray;
+      }
+    }
+  }
+  &--white {
+    svg {
+      path.circle {
+        fill: white;
+      }
+      path.word {
+        fill: white;
+      }
+    }
+  }
+  &--menu {
+    svg {
+      path.circle {
+        fill: $red;
+      }
+       path.word {
+        fill: $gray;
+      }
+    }
+  }
+}
+
+.header__logo-overlay {
+  svg {
+    path.circle {
+      fill: $red;
+    }
+      path.word {
+      fill: $gray;
+    }
+  }
+}

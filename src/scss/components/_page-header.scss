@@ -1,0 +1,22 @@
+.page-header {
+  padding: 4rem 0;
+  &__title {
+    font-size: 5rem;
+    line-height: 6rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: $bold;
+
+  }
+
+}
+
+@include tablet {
+  .page-header {
+    padding: 2rem 0 2rem 0;
+    &__title {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+  }
+}
